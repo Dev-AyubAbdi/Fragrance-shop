@@ -7,7 +7,7 @@ import { Cart } from "./Pages/Cart"
 
 const App = () => {
   return (
-  <div>
+  <div className="max-w-[1110px] mx-auto">
      <Header />
      <Routes>
       <Route path="/" element={<Home />} />
