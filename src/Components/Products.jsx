@@ -11,11 +11,12 @@ export const Products = () => {
     },
     {
       id: 2,
-      name: "Gucci Bloom",
+      name: "Creed Aventus",
       urlImage:
-        "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1708167243118-59fae90f1f55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU4fHx8ZW58MHx8fHx8",
       price: 400,
     },
+   
     {
       id: 3,
       name: "Dior Sauvage",
@@ -30,11 +31,11 @@ export const Products = () => {
         "https://images.unsplash.com/photo-1658654482546-1b7daf94a663?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8",
       price: 4000,
     },
-    {
+     {
       id: 5,
-      name: "Creed Aventus",
+      name: "Gucci Bloom",
       urlImage:
-        "https://images.unsplash.com/photo-1708167243118-59fae90f1f55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU4fHx8ZW58MHx8fHx8",
+        "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D",
       price: 400,
     },
     {
