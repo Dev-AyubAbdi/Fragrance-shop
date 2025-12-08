@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import useShop from '../Context/ShopContext'
 
 export const Header = () => {
+  const {Products} = useShop()
   return (
        <div>
          {/* logo */}
@@ -14,7 +16,7 @@ export const Header = () => {
             <Link to={'/contact'}>Contact</Link>
             <Link to={'/cart'}>cart</Link>
          </div>
-         <Link to={"/cart"} className=' bg-blue-600 flex justify-center items-center p-2 rounded-full w-10 h-10 text-white'>0</Link>
+         <Link to={"/cart"} className=' bg-blue-600 flex justify-center items-center p-2 rounded-full w-10 h-10 text-white'>{Products.length}</Link>
        </div> 
        </div>
   )
