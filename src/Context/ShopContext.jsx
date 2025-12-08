@@ -17,16 +17,28 @@ export const ShopProvider = ({ children }) => {
     });
   };
 
+  const RemoveProduct = (product) => {
+    const updateProduct = state.Products.filter((pro) => pro.id !== product);
+
+    dispatch({
+      type: "ROMOVE_TO_PRODUCT",
+      payload: {
+        Products: updateProduct,
+      },
+    });
+  };
+
   const values = {
     Products: state.Products,
     total: state.total,
     addToProduct,
+    RemoveProduct,
   };
   return <ShopContext.Provider value={values}>{children}</ShopContext.Provider>;
 };
 
 const useShop = () => {
- const  context = useContext(ShopContext);
+  const context = useContext(ShopContext);
 
   if (context === undefined) {
     throw new Error("use outside of context");

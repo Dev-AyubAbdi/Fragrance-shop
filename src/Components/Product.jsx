@@ -1,10 +1,22 @@
+import { useState } from "react";
 import useShop from "../Context/ShopContext";
 
 export const Product = ({ product }) => {
-  const { addToProduct } = useShop();
+  const { addToProduct, RemoveProduct } = useShop();
+
   const handleAddProduct = (product) => {
-    addToProduct(product);
-  };
+
+    if(isActive) {
+      addToProduct(product)
+      setIsActive(false)
+    }else {
+      RemoveProduct(product)
+      setIsActive(true)
+    }
+
+  }
+
+  const [isActive, setIsActive] = useState(true);
   return (
     <div className="mb-4">
       <div className="relative">
@@ -14,10 +26,10 @@ export const Product = ({ product }) => {
           alt={Product.name}
         />
         <span
-          onClick={handleAddProduct}
+          onClick={() => handleAddProduct()}
           className="absolute top-3 right-3 p-2 w-10 h-10 justify-center items-center text-center rounded-full bg-blue-500 text-white"
         >
-          +
+          {isActive ? "+" : "-"}
         </span>
 
         <h2 className="absolute bottom-0 bg-gray-100 rounded-bl-lg rounded-br-xl w-full p-3">

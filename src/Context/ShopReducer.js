@@ -12,6 +12,11 @@ const FragranceReducer = (state, action) => {
         ...state,
         Products: payload.Products
       };
+      case "ROMOVE_TO_PRODUCT" :
+      return {
+            ...state,
+            Products: payload.Products
+      }
     default:
       throw new Error("unknow Reducer");
   }
