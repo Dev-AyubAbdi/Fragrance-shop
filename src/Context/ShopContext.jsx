@@ -8,7 +8,7 @@ export const ShopProvider = ({ children }) => {
 
   const addToProduct = (product) => {
     const newProduct = state.Products.concat(product);
-
+    calCulateProduct(newProduct);
     dispatch({
       type: "ADD_TO_PRODUCT",
       payload: {
@@ -19,7 +19,7 @@ export const ShopProvider = ({ children }) => {
 
   const RemoveProduct = (product) => {
     const updateProduct = state.Products.filter((pro) => pro.id !== product.id);
-
+    calCulateProduct(updateProduct);
     dispatch({
       type: "REMOVE_TO_PRODUCT",
       payload: {
@@ -28,11 +28,26 @@ export const ShopProvider = ({ children }) => {
     });
   };
 
+  const calCulateProduct = (Products) => {
+    if (!Array.isArray(Products)) {
+      console.log("not product");
+      return;
+    }
+    let total = 0;
+    Products.forEach((pro) => {
+      total += pro.price;
+    });
+    dispatch({
+      type: "CALCULATE_TO_PRODUCT",
+      payload: total,
+    });
+  };
   const values = {
     Products: state.Products,
     total: state.total,
     addToProduct,
     RemoveProduct,
+    calCulateProduct,
   };
   return <ShopContext.Provider value={values}>{children}</ShopContext.Provider>;
 };

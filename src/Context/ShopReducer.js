@@ -17,6 +17,11 @@ const FragranceReducer = (state, action) => {
             ...state,
             Products: payload.Products
       }
+      case "CALCULATE_TO_PRODUCT" :
+        return {
+          ...state,
+          total: payload
+        }
     default:
       throw new Error("unknow Reducer");
   }

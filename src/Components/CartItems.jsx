@@ -3,13 +3,15 @@ import { Product } from "./Product";
 import useShop from "../Context/ShopContext";
 
 export const CartItems = () => {
-  const { Products } = useShop();
+  const { Products,  RemoveProduct, total } = useShop();
+
+  console.log(total);
   return (
     <div className=" flex-1 border-r">
       <div className="">
         {/* Cart Products */}
         <div>
-          <h2 className="mb-10">Cart Products</h2>
+          <h2 className="mb-10 text-3xl text-center">Cart Products</h2>
           <div>
             {Products.map((product) => (
               <div className="m-4">
@@ -17,13 +19,13 @@ export const CartItems = () => {
                     {<img className="w-20 h-20 rounded-full border p-2 " src={product.urlImage} alt="" />}
 
                     <h2>${product.price}</h2>
-                    <span>X</span>
+                    <span className="cursor-pointer" onClick={()=>  RemoveProduct(product)}>X</span>
                 </div>
                
               </div>
               
             ))}
-             <span className="flex justify-center text-center">Total Price:0</span>
+             <span className="  flex justify-center text-center ">Total Price: ${total}</span>
           </div>
         </div>
       </div>
