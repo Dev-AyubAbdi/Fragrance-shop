@@ -18,10 +18,10 @@ export const ShopProvider = ({ children }) => {
   };
 
   const RemoveProduct = (product) => {
-    const updateProduct = state.Products.filter((pro) => pro.id !== product);
+    const updateProduct = state.Products.filter((pro) => pro.id !== product.id);
 
     dispatch({
-      type: "ROMOVE_TO_PRODUCT",
+      type: "REMOVE_TO_PRODUCT",
       payload: {
         Products: updateProduct,
       },

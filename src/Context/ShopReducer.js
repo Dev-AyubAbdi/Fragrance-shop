@@ -12,7 +12,7 @@ const FragranceReducer = (state, action) => {
         ...state,
         Products: payload.Products
       };
-      case "ROMOVE_TO_PRODUCT" :
+      case "REMOVE_TO_PRODUCT" :
       return {
             ...state,
             Products: payload.Products

@@ -5,16 +5,14 @@ export const Product = ({ product }) => {
   const { addToProduct, RemoveProduct } = useShop();
 
   const handleAddProduct = (product) => {
-
-    if(isActive) {
-      addToProduct(product)
-      setIsActive(false)
-    }else {
-      RemoveProduct(product)
-      setIsActive(true)
+    if (isActive) {
+      addToProduct(product);
+      setIsActive(false);
+    } else {
+      RemoveProduct(product);
+      setIsActive(true);
     }
-
-  }
+  };
 
   const [isActive, setIsActive] = useState(true);
   return (
@@ -26,8 +24,8 @@ export const Product = ({ product }) => {
           alt={Product.name}
         />
         <span
-          onClick={() => handleAddProduct()}
-          className="absolute top-3 right-3 p-2 w-10 h-10 justify-center items-center text-center rounded-full bg-blue-500 text-white"
+          onClick={() => handleAddProduct(product)}
+          className="absolute top-3 right-3 p-2 w-10 h-10 justify-center items-center text-center rounded-full bg-blue-500 text-white cursor-pointer"
         >
           {isActive ? "+" : "-"}
         </span>
