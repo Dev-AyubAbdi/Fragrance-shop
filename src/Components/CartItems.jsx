@@ -3,7 +3,7 @@ import { Product } from "./Product";
 import useShop from "../Context/ShopContext";
 
 export const CartItems = () => {
-  const { Products,  RemoveProduct, total } = useShop();
+  const { Products, RemoveProduct, total } = useShop();
 
   console.log(total);
   return (
@@ -16,16 +16,27 @@ export const CartItems = () => {
             {Products.map((product) => (
               <div className="m-4">
                 <div className="flex justify-around items-center m-2 border-b p-3 ">
-                    {<img className="w-20 h-20 rounded-full border p-2 " src={product.urlImage} alt="" />}
+                  {
+                    <img
+                      className="w-20 h-20 rounded-full border p-2 "
+                      src={product.urlImage}
+                      alt=""
+                    />
+                  }
 
-                    <h2>${product.price}</h2>
-                    <span className="cursor-pointer" onClick={()=>  RemoveProduct(product)}>X</span>
+                  <h2>${product.price}</h2>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => RemoveProduct(product)}
+                  >
+                    X
+                  </span>
                 </div>
-               
               </div>
-              
             ))}
-             <span className="  flex justify-center text-center ">Total Price: ${total}</span>
+            <span className="  flex justify-center text-center text-base font-bold ">
+              Total Price: ${total}
+            </span>
           </div>
         </div>
       </div>
